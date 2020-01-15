@@ -13,11 +13,11 @@ Goal
 Changing Color-space
 ======================
 
-There are more than 150 color-space conversion methods available in OpenCV. But we will look into only two which are most widely used ones, BGR :math:`\leftrightarrow` Gray and BGR :math:`\leftrightarrow` HSV.
+There are more than 150 color-space conversion methods available in OpenCV. But we will look into only two which are the most widely used ones, BGR :math:`\leftrightarrow` Gray and BGR :math:`\leftrightarrow` HSV.
 
 For color conversion, we use the function ``cv2.cvtColor(input_image, flag)`` where ``flag`` determines the type of conversion.
 
-For BGR :math:`\rightarrow` Gray conversion we use the flags ``cv2.COLOR_BGR2GRAY``. Similarly for BGR :math:`\rightarrow` HSV, we use the flag ``cv2.COLOR_BGR2HSV``. To get other flags, just run following commands in your Python terminal :
+For BGR :math:`\rightarrow` Gray conversion we use the flag ``cv2.COLOR_BGR2GRAY``. Similarly for BGR :math:`\rightarrow` HSV, we use the flag ``cv2.COLOR_BGR2HSV``. To get other flags, just run following commands in your Python terminal :
 ::
 
     >>> import cv2
@@ -30,14 +30,14 @@ For BGR :math:`\rightarrow` Gray conversion we use the flags ``cv2.COLOR_BGR2GRA
 Object Tracking
 ==================
 
-Now we know how to convert BGR image to HSV, we can use this to extract a colored object. In HSV, it is more easier to represent a color than RGB color-space. In our application, we will try to extract a blue colored object. So here is the method:
+Now we know how to convert BGR image to HSV, we can use this to extract a colored object. It is much easier to represent a color in HSV color-space than RGB color-space. In our application, we will try to extract a blue-colored object. So here is the method:
 
     * Take each frame of the video
     * Convert from BGR to HSV color-space
     * We threshold the HSV image for a range of blue color
     * Now extract the blue object alone, we can do whatever on that image we want.
     
-Below is the code which are commented in detail :
+Below is the code which is commented in detail :
 ::
 
     import cv2
